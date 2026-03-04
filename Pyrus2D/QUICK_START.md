@@ -113,3 +113,21 @@ For each version, note:
 **Game not starting**
 - In monitor, click "Kick Off" or press K
 - Or wait for timeout (server auto-starts after ~10 seconds)
+
+## Alpha Parameter Benchmark (tactical_engine.py)
+
+Use the same batch/parallel workflow as behavior comparison, but pin each team to fixed tactical α values:
+
+```bash
+cd Pyrus2D
+python run_alpha_comparison.py --alphas 0.2 0.5 0.8 --matches 20 --workers 6
+```
+
+Optional explicit pairings:
+
+```bash
+python run_alpha_comparison.py --pairings 0.2_vs_0.8 0.5_vs_0.5 --matches 30
+```
+
+Results are written to `alpha_results/` and can be post-processed with `metrics_analyzer.py`.
+
